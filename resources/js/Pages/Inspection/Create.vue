@@ -1,8 +1,8 @@
 <template>
     <form @submit.prevent="create">
         <div class="grid grid-cols-6 gap-4">
-            <div class="col-span-2">
-                <label class="label">Ordem de Seriço:</label>
+            <div class="col-span-1">
+                <label class="label">Ordem de Serviço:</label>
         <input v-model.number="form.serviceOrder" type="text" class="input" />
                 <div v-if="form.errors.serviceOrder">
                     {{ form.errors.serviceOrder }}
@@ -10,7 +10,7 @@
             </div>
 
 
-            <div class="col-span-2">
+            <div class="col-span-1">
                 <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Certificado: </label>
                 <input v-model="form.certificate" type="text"
                     class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
@@ -20,7 +20,7 @@
             </div>
 
 
-            <div class="col-span-2">
+            <div class="col-span-1">
                 <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Serviço: </label>
                 <input v-model="form.scope" type="text"
                     class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
@@ -29,7 +29,7 @@
                 </div>
             </div>
 
-            <div class="col-span-2">
+            <div class="col-span-1">
                 <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Container: </label>
                 <input v-model="form.container" type="text"
                     class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
@@ -38,7 +38,7 @@
                 </div>
             </div>
 
-            <div class="col-span-2">
+            <div class="col-span-1">
                 <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Status</label>
                 <select v-model="form.status">
                     <option value="Programado">Programado</option>
@@ -53,7 +53,7 @@
                 </div>
             </div>
 
-            <div class="col-span-2">
+            <div class="col-span-1">
                 <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Inspetor: </label>
                 <input v-model="form.inspector" type="text"
                     class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
@@ -62,7 +62,7 @@
                 </div>
             </div>
 
-            <div class="col-span-2">
+            <div class="col-span-1">
                 <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Ajudante: </label>
                 <input v-model="form.staff" type="text"
                     class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
@@ -71,7 +71,7 @@
                 </div>
             </div>
 
-            <div class="col-span-2">
+            <div class="col-span-1">
                 <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Data: </label>
                 <input v-model="form.date" type="date"
                     class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
@@ -80,7 +80,7 @@
                 </div>
             </div>
 
-            <div class="col-span-2">
+            <div class="col-span-1">
                 <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Local: </label>
                 <input v-model="form.location" type="text"
                     class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
@@ -89,7 +89,7 @@
                 </div>
             </div>
 
-            <div class="col-span-2">
+            <div class="col-span-1">
                 <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Destino: </label>
                 <input v-model="form.destination" type="text"
                     class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
@@ -98,7 +98,7 @@
                 </div>
             </div>
 
-            <div class="col-span-2">
+            <div class="col-span-1">
                 <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Ordem: </label>
                 <input v-model="form.order" type="text"
                     class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
@@ -107,7 +107,7 @@
                 </div>
             </div>
 
-            <div class="col-span-2">
+            <div class="col-span-1">
                 <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Contrato: </label>
                 <input v-model="form.contract" type="text"
                     class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
@@ -116,7 +116,7 @@
                 </div>
             </div>
 
-            <div class="col-span-2">
+            <div class="col-span-1">
                 <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Nomeação: </label>
                 <input v-model="form.nomination" type="text"
                     class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
@@ -125,7 +125,7 @@
                 </div>
             </div>
 
-            <div class="col-span-2">
+            <div class="col-span-1">
                 <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Exportador: </label>
                 <input v-model="form.exporter" type="text"
                     class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
@@ -134,7 +134,7 @@
                 </div>
             </div>
 
-            <div class="col-span-2">
+            <div class="col-span-1">
                 <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Importador: </label>
                 <input v-model="form.importer" type="text"
                     class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
@@ -143,8 +143,8 @@
                 </div>
             </div>
 
-            <div class="col-span-2">
-                <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Quantidade de Caixas: </label>
+            <div class="col-span-1">
+                <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Quantidade: </label>
                 <input v-model="form.productQty" type="text"
                     class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
                 <div v-if="form.errors.productQty">
@@ -152,7 +152,7 @@
                 </div>
             </div>
 
-            <div class="col-span-2">
+            <div class="col-span-1">
                 <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Produto: </label>
                 <input v-model="form.generalProduct" type="text"
                     class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
@@ -161,7 +161,7 @@
                 </div>
             </div>
 
-            <div class="col-span-2">
+            <div class="col-span-1">
                 <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Peso Líquido: </label>
                 <input v-model="form.netW" type="text"
                     class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
@@ -170,7 +170,7 @@
                 </div>
             </div>
 
-            <div class="col-span-2">
+            <div class="col-span-1">
                 <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Peso Bruto: </label>
                 <input v-model="form.grossW" type="text"
                     class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
@@ -181,7 +181,7 @@
 
             <div class="col-span-6">
                 <button type="submit"
-                    class="bg-blue-600 hover:bg-blue-500 text-white font-medium p-2 rounded-md">Salvar Programação</button>
+                    class="bg-blue-600 hover:bg-blue-500 text-white font-medium p-2 rounded-md">Criar Programação</button>
             </div>
         </div>
     </form>
@@ -220,5 +220,14 @@ label {
 
 div {
     padding: 2px
+}
+
+@media (max-width: 1366px) {
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .col-span-1 {
+    grid-column: 1 / -1;
+  }
 }
 </style>
