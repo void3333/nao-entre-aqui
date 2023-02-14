@@ -29,7 +29,7 @@ class InspectionController extends Controller
      */
     public function create()
     {
-        //
+        return inertia('Inspection/Create');
     }
 
     /**
@@ -40,7 +40,32 @@ class InspectionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Inspection::create(
+            $request->validate([
+                'serviceOrder' => 'required|integer',
+                'certificate' => 'required|integer',
+                'scope' => 'required',
+                'container' => 'required',
+                'status' => 'required',
+                'inspector' => 'required',
+                'staff' => 'required',
+                'date' => 'required',
+                'location' => 'required',
+                'destination' => 'required',
+                'order' => 'required',
+                'contract' => 'required',
+                'nomination' => 'required',
+                'exporter' => 'required',
+                'importer' => 'required',
+                'productQty' => 'required',
+                'generalProduct' => 'required',
+                'netW' => 'required',
+                'grossW' => 'required',
+            ])
+        );
+
+        return redirect()->route('inspection.index')
+            ->with('success', 'Inspeção registrada com sucesso!');
     }
 
     /**
@@ -54,9 +79,10 @@ class InspectionController extends Controller
         return inertia(
             'Inspection/Show',
             [
-                'inspections' => $inspection
-            ]
+                'inspection' => $inspection
+            ]  
         );
+        
     }
 
     /**
@@ -65,9 +91,14 @@ class InspectionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Inspection $inspection)
     {
-        //
+        return inertia(
+            'Inspection/Edit',
+            [
+                'inspection' => $inspection
+            ]
+        ); 
     }
 
     /**
@@ -77,9 +108,35 @@ class InspectionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Inspection $inspection)
     {
-        //
+        $inspection->update(
+            $request->validate([
+                'serviceOrder' => 'required|integer',
+                'certificate' => 'required|integer',
+                'scope' => 'required',
+                'container' => 'required',
+                'status' => 'required',
+                'inspector' => 'required',
+                'staff' => 'required',
+                'date' => 'required',
+                'location' => 'required',
+                'destination' => 'required',
+                'order' => 'required',
+                'contract' => 'required',
+                'nomination' => 'required',
+                'exporter' => 'required',
+                'importer' => 'required',
+                'productQty' => 'required',
+                'generalProduct' => 'required',
+                'netW' => 'required',
+                'grossW' => 'required',
+            ])
+        );
+
+        return redirect()->route('inspection.index')
+        ->with('success', 'Inspeção atualizada!');
+
     }
 
     /**
@@ -88,8 +145,11 @@ class InspectionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Inspection $inspection)
     {
-        //
+        $inspection->delete();
+        
+        return redirect()->back()
+        ->with('success', 'Programação deletada!');
     }
 }

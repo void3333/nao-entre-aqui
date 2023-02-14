@@ -1,15 +1,6 @@
 <template>
-  <span>
-    O.S: {{ inspection.serviceOrder }} <br>
-    Certificado: {{ inspection.certificate }} <br>
+  <span> 
     Serviço: {{ inspection.scope }} <br>
-    Container: {{ inspection.container }} <br>
-    Status: {{ inspection.status }} <br>
-    Inspetor: {{ inspection.inspector }} <br>
-    Assistente: {{ inspection.staff }} <br>
-    Data: {{ inspection.date }} <br>
-    Local: {{ inspection.location }} <br>
-    Destino: {{ inspection.destination }} <br>
     Ordem: {{ inspection.order }} <br>
     Contrato: {{ inspection.contract }} <br>
     Nomeação: {{ inspection.nomination }} <br>
