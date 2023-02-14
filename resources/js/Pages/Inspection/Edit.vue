@@ -195,7 +195,7 @@ const form = useForm({
     netW: props.inspection.netW,
     grossW: props.inspection.grossW,
 })
-const update = () => form.put(`/inspection/${props.inspection.id}`)
+const update = () => form.put(route('inspection.update', {inspection: props.inspection.id}))
 </script>
 
 <style scoped>

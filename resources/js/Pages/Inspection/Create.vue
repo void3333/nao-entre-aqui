@@ -1,40 +1,45 @@
 <template>
     <form @submit.prevent="create">
-        <div>
-            <div>
-                <label>O.S</label>
-                <input v-model="form.serviceOrder" type="text" />
+        <div class="grid grid-cols-6 gap-4">
+            <div class="col-span-2">
+                <label class="label">Ordem de Seriço:</label>
+        <input v-model.number="form.serviceOrder" type="text" class="input" />
                 <div v-if="form.errors.serviceOrder">
                     {{ form.errors.serviceOrder }}
                 </div>
             </div>
 
-            <div>
-                <label>Certificado</label>
-                <input v-model="form.certificate" type="text" />
+
+            <div class="col-span-2">
+                <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Certificado: </label>
+                <input v-model="form.certificate" type="text"
+                    class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
                 <div v-if="form.errors.certificate">
                     {{ form.errors.certificate }}
                 </div>
             </div>
 
-            <div>
-                <label>Serviço</label>
-                <input v-model="form.scope" type="text" />
+
+            <div class="col-span-2">
+                <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Serviço: </label>
+                <input v-model="form.scope" type="text"
+                    class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
                 <div v-if="form.errors.scope">
                     {{ form.errors.scope }}
                 </div>
             </div>
 
-            <div>
-                <label>Container</label>
-                <input v-model="form.container" type="text" />
+            <div class="col-span-2">
+                <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Container: </label>
+                <input v-model="form.container" type="text"
+                    class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
                 <div v-if="form.errors.container">
                     {{ form.errors.container }}
                 </div>
             </div>
 
-            <div>
-                <label>Status</label>
+            <div class="col-span-2">
+                <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Status</label>
                 <select v-model="form.status">
                     <option value="Programado">Programado</option>
                     <option value="Inspecionado">Inspecionado</option>
@@ -48,120 +53,135 @@
                 </div>
             </div>
 
-            <div>
-                <label>Inspetor</label>
-                <input v-model="form.inspector" type="text" />
+            <div class="col-span-2">
+                <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Inspetor: </label>
+                <input v-model="form.inspector" type="text"
+                    class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
                 <div v-if="form.errors.inspector">
                     {{ form.errors.inspector }}
                 </div>
             </div>
 
-            <div>
-                <label>Ajudante</label>
-                <input v-model="form.staff" type="text" />
+            <div class="col-span-2">
+                <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Ajudante: </label>
+                <input v-model="form.staff" type="text"
+                    class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
                 <div v-if="form.errors.staff">
                     {{ form.errors.staff }}
                 </div>
             </div>
 
-            <div>
-                <label>Data</label>
-                <input v-model="form.date" type="date" />
+            <div class="col-span-2">
+                <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Data: </label>
+                <input v-model="form.date" type="date"
+                    class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
                 <div v-if="form.errors.date">
                     {{ form.errors.date }}
                 </div>
             </div>
 
-            <div>
-                <label>Local</label>
-                <input v-model="form.location" type="text" />
+            <div class="col-span-2">
+                <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Local: </label>
+                <input v-model="form.location" type="text"
+                    class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
                 <div v-if="form.errors.location">
                     {{ form.errors.location }}
                 </div>
             </div>
 
-            <div>
-                <label>Destino</label>
-                <input v-model="form.destination" type="text" />
+            <div class="col-span-2">
+                <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Destino: </label>
+                <input v-model="form.destination" type="text"
+                    class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
                 <div v-if="form.errors.destination">
                     {{ form.errors.destination }}
                 </div>
             </div>
 
-            <div>
-                <label>Ordem</label>
-                <input v-model="form.order" type="text" />
+            <div class="col-span-2">
+                <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Ordem: </label>
+                <input v-model="form.order" type="text"
+                    class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
                 <div v-if="form.errors.order">
                     {{ form.errors.order }}
                 </div>
             </div>
 
-            <div>
-                <label>Contrato</label>
-                <input v-model="form.contract" type="text" />
+            <div class="col-span-2">
+                <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Contrato: </label>
+                <input v-model="form.contract" type="text"
+                    class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
                 <div v-if="form.errors.contract">
                     {{ form.errors.contract }}
                 </div>
             </div>
 
-            <div>
-                <label>Nomeação</label>
-                <input v-model="form.nomination" type="text" />
+            <div class="col-span-2">
+                <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Nomeação: </label>
+                <input v-model="form.nomination" type="text"
+                    class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
                 <div v-if="form.errors.nomination">
                     {{ form.errors.nomination }}
                 </div>
             </div>
 
-            <div>
-                <label>Exportador</label>
-                <input v-model="form.exporter" type="text" />
+            <div class="col-span-2">
+                <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Exportador: </label>
+                <input v-model="form.exporter" type="text"
+                    class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
                 <div v-if="form.errors.exporter">
                     {{ form.errors.exporter }}
                 </div>
             </div>
 
-            <div>
-                <label>Importador</label>
-                <input v-model="form.importer" type="text" />
+            <div class="col-span-2">
+                <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Importador: </label>
+                <input v-model="form.importer" type="text"
+                    class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
                 <div v-if="form.errors.importer">
                     {{ form.errors.importer }}
                 </div>
             </div>
 
-            <div>
-                <label>Quantidade</label>
-                <input v-model="form.productQty" type="text" />
+            <div class="col-span-2">
+                <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Quantidade de Caixas: </label>
+                <input v-model="form.productQty" type="text"
+                    class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
                 <div v-if="form.errors.productQty">
                     {{ form.errors.productQty }}
                 </div>
             </div>
 
-            <div>
-                <label>Produto</label>
-                <input v-model="form.generalProduct" type="text" />
+            <div class="col-span-2">
+                <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Produto: </label>
+                <input v-model="form.generalProduct" type="text"
+                    class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
                 <div v-if="form.errors.generalProduct">
                     {{ form.errors.generalProduct }}
                 </div>
             </div>
 
-            <div>
-                <label>Líquido</label>
-                <input v-model="form.netW" type="text" />
+            <div class="col-span-2">
+                <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Peso Líquido: </label>
+                <input v-model="form.netW" type="text"
+                    class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
                 <div v-if="form.errors.netW">
                     {{ form.errors.netW }}
                 </div>
             </div>
 
-            <div>
-                <label>Bruto</label>
-                <input v-model="form.grossW" type="text" />
+            <div class="col-span-2">
+                <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Peso Bruto: </label>
+                <input v-model="form.grossW" type="text"
+                    class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
                 <div v-if="form.errors.grossW">
                     {{ form.errors.grossW }}
                 </div>
-            </div>
+            </div> <br>
 
-            <div>
-                <button type="submit">Create</button>
+            <div class="col-span-6">
+                <button type="submit"
+                    class="bg-blue-600 hover:bg-blue-500 text-white font-medium p-2 rounded-md">Salvar Programação</button>
             </div>
         </div>
     </form>
@@ -190,7 +210,7 @@ const form = useForm({
     netW: null,
     grossW: null,
 })
-const create = () => form.post('/inspection')
+const create = () => form.post(route('inspection.store'))
 </script>
 
 <style scoped>
