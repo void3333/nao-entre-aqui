@@ -4,7 +4,7 @@
             <div class="col-span-1">
                 <label class="label">Ordem de Serviço:</label>
         <input v-model.number="form.serviceOrder" type="text" class="input" />
-                <div v-if="form.errors.serviceOrder">
+                <div v-if="form.errors.serviceOrder" class="input-error">
                     {{ form.errors.serviceOrder }}
                 </div>
             </div>
@@ -14,7 +14,7 @@
                 <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Certificado: </label>
                 <input v-model="form.certificate" type="text"
                     class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
-                <div v-if="form.errors.certificate">
+                <div v-if="form.errors.certificate" class="input-error">
                     {{ form.errors.certificate }}
                 </div>
             </div>

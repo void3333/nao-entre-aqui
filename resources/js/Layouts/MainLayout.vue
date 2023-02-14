@@ -8,6 +8,7 @@
         <div class="text-xl text-gray-600 dark:text-gray-400 font-bold text-center">
           <Link :href="route('inspection.index')">Conformity</Link>
         </div>
+        
         <div>
           <Link :href="route('inspection.create')" class="btn-primary">+ Criar</Link>
         </div>
