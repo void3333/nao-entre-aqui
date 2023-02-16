@@ -24,7 +24,7 @@
                 <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Serviço: </label>
                 <input v-model="form.scope" type="text"
                     class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
-                <div v-if="form.errors.scope">
+                <div v-if="form.errors.scope" class="input-error">
                     {{ form.errors.scope }}
                 </div>
             </div>
@@ -33,7 +33,7 @@
                 <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Container: </label>
                 <input v-model="form.container" type="text"
                     class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
-                <div v-if="form.errors.container">
+                <div v-if="form.errors.container" class="input-error">
                     {{ form.errors.container }}
                 </div>
             </div>
@@ -48,7 +48,7 @@
                     <option value="Jornada Improdutiva">Jornada Improdutiva</option>
                     <option value="Cancelado">Cancelado</option>
                 </select>
-                <div v-if="form.errors.status">
+                <div v-if="form.errors.status" class="input-error">
                     {{ form.errors.status }}
                 </div>
             </div>
@@ -57,7 +57,7 @@
                 <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Inspetor: </label>
                 <input v-model="form.inspector" type="text"
                     class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
-                <div v-if="form.errors.inspector">
+                <div v-if="form.errors.inspector" class="input-error">
                     {{ form.errors.inspector }}
                 </div>
             </div>
@@ -66,7 +66,7 @@
                 <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Ajudante: </label>
                 <input v-model="form.staff" type="text"
                     class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
-                <div v-if="form.errors.staff">
+                <div v-if="form.errors.staff" class="input-error">
                     {{ form.errors.staff }}
                 </div>
             </div>
@@ -75,7 +75,7 @@
                 <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Data: </label>
                 <input v-model="form.date" type="date"
                     class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
-                <div v-if="form.errors.date">
+                <div v-if="form.errors.date" class="input-error">
                     {{ form.errors.date }}
                 </div>
             </div>
@@ -84,7 +84,7 @@
                 <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Local: </label>
                 <input v-model="form.location" type="text"
                     class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
-                <div v-if="form.errors.location">
+                <div v-if="form.errors.location" class="input-error">
                     {{ form.errors.location }}
                 </div>
             </div>
@@ -93,7 +93,7 @@
                 <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Destino: </label>
                 <input v-model="form.destination" type="text"
                     class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
-                <div v-if="form.errors.destination">
+                <div v-if="form.errors.destination" class="input-error">
                     {{ form.errors.destination }}
                 </div>
             </div>
@@ -102,7 +102,7 @@
                 <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Ordem: </label>
                 <input v-model="form.order" type="text"
                     class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
-                <div v-if="form.errors.order">
+                <div v-if="form.errors.order" class="input-error">
                     {{ form.errors.order }}
                 </div>
             </div>
@@ -111,7 +111,7 @@
                 <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Contrato: </label>
                 <input v-model="form.contract" type="text"
                     class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
-                <div v-if="form.errors.contract">
+                <div v-if="form.errors.contract" class="input-error">
                     {{ form.errors.contract }}
                 </div>
             </div>
@@ -120,7 +120,7 @@
                 <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Nomeação: </label>
                 <input v-model="form.nomination" type="text"
                     class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
-                <div v-if="form.errors.nomination">
+                <div v-if="form.errors.nomination" class="input-error">
                     {{ form.errors.nomination }}
                 </div>
             </div>
@@ -129,7 +129,7 @@
                 <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Exportador: </label>
                 <input v-model="form.exporter" type="text"
                     class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
-                <div v-if="form.errors.exporter">
+                <div v-if="form.errors.exporter" class="input-error">
                     {{ form.errors.exporter }}
                 </div>
             </div>
@@ -138,7 +138,7 @@
                 <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Importador: </label>
                 <input v-model="form.importer" type="text"
                     class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
-                <div v-if="form.errors.importer">
+                <div v-if="form.errors.importer" class="input-error">
                     {{ form.errors.importer }}
                 </div>
             </div>
@@ -147,7 +147,7 @@
                 <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Quantidade: </label>
                 <input v-model="form.productQty" type="text"
                     class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
-                <div v-if="form.errors.productQty">
+                <div v-if="form.errors.productQty" class="input-error">
                     {{ form.errors.productQty }}
                 </div>
             </div>
@@ -156,7 +156,7 @@
                 <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Produto: </label>
                 <input v-model="form.generalProduct" type="text"
                     class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
-                <div v-if="form.errors.generalProduct">
+                <div v-if="form.errors.generalProduct" class="input-error">
                     {{ form.errors.generalProduct }}
                 </div>
             </div>
@@ -165,7 +165,7 @@
                 <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Peso Líquido: </label>
                 <input v-model="form.netW" type="text"
                     class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
-                <div v-if="form.errors.netW">
+                <div v-if="form.errors.netW" class="input-error">
                     {{ form.errors.netW }}
                 </div>
             </div>
@@ -174,7 +174,7 @@
                 <label class="block mb-1 text-gray-500 dark:text-gray-300 font-medium">Peso Bruto: </label>
                 <input v-model="form.grossW" type="text"
                     class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500" />
-                <div v-if="form.errors.grossW">
+                <div v-if="form.errors.grossW" class="input-error">
                     {{ form.errors.grossW }}
                 </div>
             </div> <br>
