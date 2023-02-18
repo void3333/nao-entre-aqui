@@ -1,10 +1,7 @@
 <?php
-
 namespace Database\Seeders;
-
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -15,11 +12,20 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
-
         \App\Models\User::factory()->create([
-           'name' => 'Test User',
-             'email' => 'test@example.com',
-         ]);
-        \App\Models\Inspection::factory(20)->create();
+            'name' => 'Test User',
+            'email' => 'test@example.com',
+            'is_admin' => true
+        ]);
+        \App\Models\User::factory()->create([
+            'name' => 'Test User',
+            'email' => 'test2@example.com',
+        ]);
+        \App\Models\Inspection::factory(10)->create([
+            'by_user_id' => 1
+        ]);
+        \App\Models\Inspection::factory(10)->create([
+            'by_user_id' => 2
+        ]);
     }
 }

@@ -28,7 +28,6 @@
 import { Link } from '@inertiajs/vue3'
 import InspectionSpace from '@/Components/InspectionSpace.vue';
 import Box from '@/Components/UI/Box.vue'
-import OsSpace from '@/Components/OsSpace.vue';
 
 defineProps({
   inspections: Array,

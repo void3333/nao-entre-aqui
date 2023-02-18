@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="Entrar">
+  <form @submit.prevent="login">
     <div class="w-1/2 mx-auto">
       <div>
         <label for="email" class="label">E-mail</label>

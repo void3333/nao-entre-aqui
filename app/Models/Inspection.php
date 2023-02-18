@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Inspection extends Model
 {
@@ -29,4 +30,12 @@ class Inspection extends Model
         'netW',
         'grossW',
     ];
+    
+    public function owner(): BelongsTo
+    {
+        return $this->belongsTo(
+            \App\Models\User::class,
+            'by_user_id'
+        );
+    }
 }

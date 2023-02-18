@@ -4,14 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Models\Inspection;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class InspectionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function __construct()
+    {
+        $this->authorizeResource(Inspection::class, 'inspection');
+    }
+
     public function index()
     {
         return inertia(
@@ -40,7 +41,7 @@ class InspectionController extends Controller
      */
     public function store(Request $request)
     {
-        Inspection::create(
+        $request->user()->inspections()->create(
             $request->validate([
                 'serviceOrder' => 'required|integer',
                 'certificate' => 'required|integer',
@@ -61,7 +62,8 @@ class InspectionController extends Controller
                 'generalProduct' => 'required',
                 'netW' => 'required',
                 'grossW' => 'required',
-            ])
+            ]),
+          
         );
 
         return redirect()->route('inspection.index')
